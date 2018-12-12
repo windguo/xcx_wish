@@ -27,18 +27,22 @@
 
     <view class="btns">
       <block wx:if="{{state === 0}}">
-        <button class="change-btn" size='default' type='primary' bindtap="changeOne">换一个祝福语</button>
-        <button class="finish-btn" open-type="share" size='default' type="primary" bindtap="shareTips">立即送祝福</button>
+        <button class="change-btn" size='default' bindtap="changeOne">换一个祝福语</button>
+        <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
       </block>
       <block wx:if="{{state === 1}}">
-        <button class="change-btn" size='default' type='primary' bindtap="reply">回复祝福</button>
-        <button class="change-btn" size='default' type='primary' bindtap="goHome">我也制作祝福</button>
+        <button class="change-btn" size='default' bindtap="reply">回复祝福</button>
+        <button class="finish-btn" size='default' bindtap="goHome">我也制作祝福</button>
+      </block>
+      <block wx:if="{{state === 2}}">
+        <button class="change-btn" size='default' bindtap="bindViewTap">继续编辑</button>
+        <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
       </block>
     </view>
 
   </view>
 
-  <!-- <view class="overlay center" wx:if="{{!showCustomHint}}" bindtap="confirmCustomHint">
+  <view class="overlay center" wx:if="{{!showCustomHint}}" bindtap="confirmCustomHint">
     <view class="overlay-inner">
       <view class="center-block">
         <image class="hand" src="../../images/tap.png"></image>
@@ -46,7 +50,7 @@
       </view>
       <button hover-class="btn-hover">我知道了</button>
     </view>
-  </view> -->
+  </view>
 
 </view>
 

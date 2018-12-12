@@ -10,8 +10,9 @@ Page({
         radios:254
     },
     onLoad:function (options) {
+        wx.showLoading({});
         console.log('---options---',options);
-        if (options.tonames){
+        if (options.tonames && options.tonames !== ''){
             this.setData({
                 toname:options.tonames
             });
@@ -30,6 +31,7 @@ Page({
                 that.setData({
                     items:res.data.result
                 });
+                wx.hideLoading();
             }
         })
     },

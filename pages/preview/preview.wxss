@@ -147,3 +147,17 @@
   height:88rpx;
   margin-left:-35rpx;
 }
+.btns .change-btn {
+  /* color: #e8c478; */
+  border: 3rpx solid #e8c478;
+  background-color: #fffff0;
+}
+
+.btns .finish-btn,
+.btns .share-btn,
+.btns .custom-btn {
+  /* color: #fff; */
+  border: 3rpx solid #e8c478;
+  background-color: #e8c478;
+  line-height: 88rpx;
+}

@@ -13,22 +13,22 @@
       <!-- from name -->
       <view class="item">
         <text class="key">祝福落款</text>
-        <input name="nickName" class="value" value="{{userInfo.nickName}}" bindblur="setNickName"></input>
+        <input name="nickName" class="value" value="{{nickName}}" bindblur="setNickName"></input>
       </view>
 
       <!-- best wishes -->
       <view class="item best-wishes">
-        <textarea bindinput="bindChangeText" class="textarea" name="best-wishes" value="{{wishes}}" id="best-wishes" bindblur="setWishes"></textarea>
+<textarea bindinput="bindChangeText" class="textarea" name="bestWishes" value="{{wishes}}" id="best-wishes" bindblur="setWishes"></textarea>
         <text class="word-tips {{isRed ? 'red' : ''}}">50字以内</text>
       </view>
 
       <!-- select panel -->
-      <view class="select-panel">
+      <!-- <view class="select-panel">
         <button class="tips" plain="true" hover-class="tapped" bindtap="more-template">
           <text>选择其他推荐祝福语</text>
           <image class="bg" src="../../images/indicator.png"></image>
         </button>
-      </view>
+      </view> -->
 
       <!-- controls -->
       <view class="btns">

@@ -4,7 +4,10 @@
 const app = getApp();
 App({
   globalData:{
-    userInfo: ''
+    userInfo: '',
+    toname: '',
+    nickName:'',
+    bestWishes:''
   }
 })
 
