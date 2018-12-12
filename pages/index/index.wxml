@@ -1,7 +1,6 @@
 <view class="container">
     <view class="userinfoArea">
         <view class="logined" wx:if='{{userinfos}}'>
-            <!-- 欢迎<span>{{nickName}}</span>如果喜欢我们的小程序希望转发好友哦，感激不尽！。 -->
             <view class="form">
                 <form bindsubmit="generate">
                     <input class="nameInput" name="toname" value="{{toname}}" placeholder="怎么称呼TA?(不超过10个字)" />

@@ -11,6 +11,9 @@ Page({
     },
     onLoad:function (options) {
         wx.showLoading({});
+        wx.setNavigationBarTitle({
+            title: '生日祝福语'
+        })
         console.log('---options---',options);
         if (options.tonames && options.tonames !== ''){
             this.setData({

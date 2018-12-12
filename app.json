@@ -1,10 +1,10 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/create/create",
     "pages/custom/custom",
     "pages/preview/preview",
-    "pages/more/more"
+    "pages/jieri/jieri",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -12,6 +12,27 @@
     "navigationBarTitleText": "祝福语大全",
     "navigationBarTextStyle":"white",
     "backgroundColor": "#e7404d"
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index/index",
+        "iconPath": "images/ico_cake.png",
+        "selectedIconPath": "images/ico_cake_active.png",
+        "text": "生日祝福语"
+      },
+      {
+        "pagePath": "pages/jieri/jieri",
+        "iconPath": "images/ico_jieri.png",
+        "selectedIconPath": "images/ico_jieri_active.png",
+        "text": "节日祝福语"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/ico_about.png",
+        "selectedIconPath": "images/ico_about_active.png",
+        "text": "关于我们"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 1e4,
