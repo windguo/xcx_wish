@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="userinfoArea">
+        <view class="logined" wx:if='{{userinfos}}'>
+            <!-- 欢迎<span>{{nickName}}</span>如果喜欢我们的小程序希望转发好友哦，感激不尽！。 -->
+            <view class="form">
+                <form bindsubmit="generate">
+                    <input class="nameInput" name="toname" value="{{toname}}" placeholder="怎么称呼TA?(不超过10个字)" />
+                    <radio-group class="radio-group" bindchange="radioChange">
+                        <input type="text" name="classid" hidden="false" value="{{radios}}" />
+                        <label class="radio" wx:for="{{items}}">
+                            <radio value="{{item.classid}}" checked="{{item.classid == 254}}" />{{item.classname}}
+                        </label>
+                    </radio-group>
+                    <view class="btn">
+                        <button form-type="submit" hover-class="navigator-hover" class="submit-btn">捎句祝福话</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+        <view class="loginBefore" wx:else>
+            <view class='header'>
+                <image class="img" src='../../images/logo.png' background-size="cover"></image>
+            </view>
+            <view class='content'>
+                <view>申请获取以下权限</view>
+                <text>获得你的公开信息(昵称，头像等)</text>
+            </view>
+            <button open-type="getUserInfo" type="primary" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+                微信授权
+            </button>
+        </view>
+    </view>
+</view>

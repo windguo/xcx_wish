@@ -1,0 +1,23 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/create/create",
+    "pages/custom/custom",
+    "pages/preview/preview",
+    "pages/more/more"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e7404d",
+    "navigationBarTitleText": "祝福语大全",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#e7404d"
+  },
+  "networkTimeout": {
+    "request": 1e4,
+    "connectSocket": 1e4,
+    "uploadFile": 1e4,
+    "downloadFile": 1e4
+  },
+  "debug": false
+}
