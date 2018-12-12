@@ -1,6 +1,3 @@
-// latest.js
-var Api = require('../../utils/api.js');
-
 var app = getApp();
 Page({
     onShareAppMessage: function (res) {

@@ -1,5 +1,3 @@
-// latest.js
-var Api = require('../../utils/api.js');
 var WxParse = require('../../wxParse/wxParse.js')
 
 var app = getApp();
