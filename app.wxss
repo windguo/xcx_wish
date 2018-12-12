@@ -1,7 +1,7 @@
 page{
   font-family: "PingFang SC", "PingFang-SC-Light", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 28rpx;
-  color: #676767;
+  color: #333;
   height: 100%;
   -webkit-font-smoothing:antialiased;
 }
