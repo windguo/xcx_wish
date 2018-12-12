@@ -75,7 +75,7 @@ Page({
             usernames: wx.getStorageSync('storageLoginedUsernames')
         })
         wx.request({
-            url: getApp().globalData.apiUrl + '/xiaochengxu/duanzi/?getJson=content&id=' + this.data.id,
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=content&id=' + this.data.id,
             method: 'GET',
             dataType: 'json',
             success: (json) => {
@@ -109,7 +109,7 @@ Page({
     randOne:function(){
         let that = this;
         wx.request({
-            url: getApp().globalData.apiUrl + '/xiaochengxu/duanzi/?getJson=column&pageSize=1&classid=' + that.data.classid,
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=column&pageSize=1&classid=' + that.data.classid,
             method: 'GET',
             dataType: 'json',
             success: (json) => {
@@ -123,7 +123,7 @@ Page({
         let that = this;
         let _arr = this.data.contentArray;
         wx.request({
-            url: getApp().globalData.apiUrl + '/xiaochengxu/duanzi/?getJson=column&classid=' + classid,
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=column&classid=' + classid,
             method: 'GET',
             dataType: 'json',
             success: (json) => {

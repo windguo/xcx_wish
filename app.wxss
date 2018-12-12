@@ -21,3 +21,26 @@ input{
 .bgeee {
   background: #eee;
 }
+.linkTo {
+  padding: 20rpx;
+  font-size: 32rpx;
+  background: #f8f8f8;
+  color: #282828;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20rpx;
+  margin: 20rpx 0
+}
+
+.linkTo .self {
+  flex: 1
+}
+
+.linkTo .linka {
+  color: #555
+}
+
+.linkTo .linkb {
+  color: #ff6677
+}

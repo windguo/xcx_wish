@@ -8,7 +8,6 @@
       </view>
       <view class="linkTo">
         <navigator url="../index/index" hover-class="navigator-hover" class="linka">返回首页</navigator>
-        <navigator url="../publish_duanzi/publish_duanzi" hover-class="navigator-hover" class="linkb">发布段子</navigator>
       </view>
       <view class="shareArea">
         <button bindtap="randOne" type="warn" size='default'>随便看看</button>
