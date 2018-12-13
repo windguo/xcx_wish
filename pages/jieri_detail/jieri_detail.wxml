@@ -14,10 +14,6 @@
           <p style="color:#c30"> → 发送此祝福语</p>
         </navigator>
       </view>
-      <view class="shareArea">
-        <button bindtap="creat" type="primary" size='default'>生成海报</button>
-        <button bindtap="saveImageToPhotosAlbum" type="default" size='default'>保存图片</button>
-      </view>
     </view>
   </view>
   <view style="height:0rpx;overflow:hidden;text-indent:-99999rpx;position:absolute;top:-99999rpx;left:-99999rpx;">
@@ -27,7 +23,8 @@
     <h2>猜你喜欢</h2>
     <view class="layout_vertical">
       <view wx:for="{{contentArray}}" class="listViews" wx:for-index="i" wx:for-item="item" data-text="{{item.title}}">
-        <navigator url="../custom/custom?state=2&from_sentence={{item.txt}}" hover-class="navigator-hover">
+<navigator url="../custom/custom?state=2&from_sentence={{item.txt}}&from_toname={{toname}}&from_avatarUrl={{avatarUrl}}&from_nickName={{nickName}}"
+  hover-class="navigator-hover">
           <h3>{{item.txt}}</h3>
         </navigator>
       </view>

@@ -161,56 +161,56 @@ Page({
         return titleHeight
     },
     //创建海报
-    creat: function () {
-        console.log('https://www.yishuzi.com.cn/e/api/jianjie8_xiaochengxu/wish_xiaochengxu_qrode.php?path=' + encodeURIComponent("pages/duanzi_detail/duanzi_detail") + '&scene=classid-' + this.data.classid + '_duanziid-' + this.data.id + '&width=100');
-        let that = this;
-        wx.getImageInfo({
-            src: 'https://www.yishuzi.com.cn/e/api/jianjie8_xiaochengxu/wish_xiaochengxu_qrode.php?path=' + encodeURIComponent("pages/duanzi_detail/duanzi_detail") + '&scene=classid-' + this.data.classid +'_duanziid-' + this.data.id + '&width=100',
-            success: function (res) {
-                console.log('that.data', res);
-                that.setData({
-                    tempFilePath:res.path
-                });
-                // 开始绘画
-                const ctx = wx.createCanvasContext('shareCanvas');
-                let _width = 650;
-                ctx.fillRect(0, 0, _width, 800);
-                ctx.setFontSize(20);
-                ctx.fillStyle = "#555";
-                ctx.lineWidth = 0;
-                ctx.drawImage('../../images/wish_bg.png', 0, 0, 400, 800);
-                var str = that.data.smalltext.replace(/<[^<>]+>/g, '').substring(0, 180) + '...';
-                var titleHeight = 50; // 标题的高度
-                var canvasWidth = _width - 340;//计算canvas的宽度
-                var initHeight = 180;//绘制字体距离canvas顶部初始的高度
-                // 标题border-bottom 线距顶部距离
-                titleHeight = that.drawText(ctx, str, initHeight, titleHeight, canvasWidth);// 调用行文本换行函数
-                console.log('titleHeight---', str.height);
-                ctx.moveTo(130, titleHeight);
+    // creat: function () {
+    //     console.log('https://www.yishuzi.com.cn/e/api/jianjie8_xiaochengxu/wish_xiaochengxu_qrode.php?path=' + encodeURIComponent("pages/jieri_detail/jieri_detail") + '&scene=' + this.data.smalltext + '&width=100');
+    //     let that = this;
+    //     wx.getImageInfo({
+    //         src: 'https://www.yishuzi.com.cn/e/api/jianjie8_xiaochengxu/wish_xiaochengxu_qrode.php?path=' + encodeURIComponent("pages/jieri_detail/jieri_detail") + '&scene=' + this.data.smalltext + '&width=100',
+    //         success: function (res) {
+    //             console.log('that.data', res);
+    //             that.setData({
+    //                 tempFilePath:res.path
+    //             });
+    //             // 开始绘画
+    //             const ctx = wx.createCanvasContext('shareCanvas');
+    //             let _width = 650;
+    //             ctx.fillRect(0, 0, _width, 800);
+    //             ctx.setFontSize(20);
+    //             ctx.fillStyle = "#555";
+    //             ctx.lineWidth = 0;
+    //             ctx.drawImage('../../images/wish_bg.png', 0, 0, 400, 800);
+    //             var str = that.data.smalltext.replace(/<[^<>]+>/g, '').substring(0, 180) + '...';
+    //             var titleHeight = 50; // 标题的高度
+    //             var canvasWidth = _width - 340;//计算canvas的宽度
+    //             var initHeight = 180;//绘制字体距离canvas顶部初始的高度
+    //             // 标题border-bottom 线距顶部距离
+    //             titleHeight = that.drawText(ctx, str, initHeight, titleHeight, canvasWidth);// 调用行文本换行函数
+    //             console.log('titleHeight---', str.height);
+    //             ctx.moveTo(130, titleHeight);
                 
-                ctx.stroke() //绘制已定义的路径
-                ctx.setFontSize(16);
-                ctx.fillStyle = "#ed5935";
-                ctx.fillText('识别小程序码,开启更多节日祝福', 90, 550)
+    //             ctx.stroke() //绘制已定义的路径
+    //             ctx.setFontSize(16);
+    //             ctx.fillStyle = "#ed5935";
+    //             ctx.fillText('识别小程序码,开启更多节日祝福', 90, 550)
                 
-                ctx.drawImage(that.data.tempFilePath, 140, 585, 120, 120);
+    //             ctx.drawImage(that.data.tempFilePath, 140, 585, 120, 120);
 
-                ctx.draw(true, setTimeout(function () {
-                    wx.canvasToTempFilePath({
-                        canvasId: 'shareCanvas',
+    //             ctx.draw(true, setTimeout(function () {
+    //                 wx.canvasToTempFilePath({
+    //                     canvasId: 'shareCanvas',
                         
-                        success: (res) => {
-                            that.setData({
-                                shareTempFilePath: res.tempFilePath
-                            });
-                            // 预览图片
-                            that.previewImage(that.data.shareTempFilePath);
-                        }
-                    })
-                }, 100))
-            }
-        })
-    },
+    //                     success: (res) => {
+    //                         that.setData({
+    //                             shareTempFilePath: res.tempFilePath
+    //                         });
+    //                         // 预览图片
+    //                         that.previewImage(that.data.shareTempFilePath);
+    //                     }
+    //                 })
+    //             }, 100))
+    //         }
+    //     })
+    // },
     scrolltolowerLoadData: function (e) {
         console.log('scrolltolowerLoadData', e);
         this.getListData(this.data.classid, true);
