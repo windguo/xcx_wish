@@ -65,31 +65,15 @@ Page({
         wx.showLoading({})
         console.log('---==--options--', options);
         wx.setNavigationBarTitle({
-            title: '段子详情页'
+            title: '祝福语详情页'
         });
+        WxParse.wxParse('article', 'html', options.from_sentence, this, 5);
         this.setData({
-            username: wx.getStorageSync('storageLoginedNickName'),
-            avatarUrl: wx.getStorageSync('storageLoginedavAtarUrl'),
-            classid:options.classid,
-            id: options.id.replace(/[^0-9]/ig, ""),
-            usernames: wx.getStorageSync('storageLoginedUsernames')
+            smalltext: options.from_sentence,
+            toname: options.from_toname,
+            nickName: options.from_nickName,
+            avatarUrl: options.from_avatarUrl
         })
-        wx.request({
-            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=content&id=' + this.data.id,
-            method: 'GET',
-            dataType: 'json',
-            success: (json) => {
-                console.log('duanzi_detail---',json.data);
-                var that = this;
-                WxParse.wxParse('article', 'html', json.data.result['smalltext'], that, 5);
-                this.setData({
-                    title: json.data.result['title'],
-                    smalltext: json.data.result['smalltext'],
-                    id: this.data.id
-                });
-                wx.hideLoading();
-            }
-        });
         var that = this;
         //  高度自适应
         wx.getSystemInfo({
@@ -106,62 +90,6 @@ Page({
         console.log('this.data.classid--', this.data.classid);
         this.getListData(this.data.classid);
     },
-    randOne:function(){
-        let that = this;
-        wx.request({
-            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=column&pageSize=1&classid=' + that.data.classid,
-            method: 'GET',
-            dataType: 'json',
-            success: (json) => {
-                wx.redirectTo({
-                    url: '../duanzi_detail/duanzi_detail?classid=' + that.data.classid + '&id=' + json.data.result[0].id
-                });
-            }
-        })
-    },
-    getListData: function (classid, more) {
-        let that = this;
-        let _arr = this.data.contentArray;
-        wx.request({
-            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=column&classid=' + classid,
-            method: 'GET',
-            dataType: 'json',
-            success: (json) => {
-                console.log('json.data.result--column-', json.data);
-                if (more) {
-                    let _newArr = [];
-                    for (let index = 0; index < json.data.result.length; index++) {
-                        _newArr.push({
-                            classid: json.data.result[index].classid,
-                            id: json.data.result[index].id,
-                            title: json.data.result[index].title,
-                            smalltext: json.data.result[index].smalltext.replace(/<[^<>]+>/g, '')
-                        });
-                    };
-                    _arr = _arr.concat(_newArr);
-                    that.setData({
-                        contentArray: _arr
-                    });
-                } else {
-                    let _newArr = [];
-                    for (let index = 0; index < json.data.result.length; index++) {
-                        _newArr.push({
-                            classid: json.data.result[index].classid,
-                            id: json.data.result[index].id,
-                            title: json.data.result[index].title,
-                            smalltext: json.data.result[index].smalltext.replace(/<[^<>]+>/g, '')
-                        });
-                    };
-                    console.log('===', _newArr);
-                    that.setData({
-                        contentArray: _newArr
-                    });
-                };
-                console.log('contentArray--==', this.data.contentArray);
-                wx.hideLoading();
-            }
-        })
-    },
     copyTBL: function (e) {
         console.log('wwweeee', e);
         var self = this;
@@ -176,6 +104,39 @@ Page({
                     }
                 })
             }
+        })
+    },
+    getListData: function (classid, more) {
+        console.log('getListData---===--start');
+        let that = this;
+        let _arr = this.data.contentArray;
+        wx.request({
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/wish/?getJson=texts&classid=' + classid,
+            method: 'GET',
+            dataType: 'json',
+            success: (json) => {
+                console.log('json.data.result---', json);
+                if (more) {
+                    let __jsons = json.data.result;
+                    console.log('____jsons__', __jsons);
+                    that.setData({
+                        contentArray: __jsons
+                    });
+                } else {
+                    let __jsons = json.data.result;
+                    console.log('____jsons__', __jsons);
+                    that.setData({
+                        contentArray: __jsons
+                    });
+                };
+                console.log('contentArray--==', this.data.contentArray);
+                wx.hideLoading();
+            }
+        })
+    },
+    returnHome:function(){
+        wx.switchTab({
+            url:'/pages/index/index'
         })
     },
     drawText: function (ctx, str, initHeight, titleHeight, canvasWidth) {
@@ -217,7 +178,7 @@ Page({
                 ctx.setFontSize(20);
                 ctx.fillStyle = "#555";
                 ctx.lineWidth = 0;
-                ctx.drawImage('../../images/duanzi_bg.png', 0, 0, 400, 800);
+                ctx.drawImage('../../images/wish_bg.png', 0, 0, 400, 800);
                 var str = that.data.smalltext.replace(/<[^<>]+>/g, '').substring(0, 180) + '...';
                 var titleHeight = 50; // 标题的高度
                 var canvasWidth = _width - 340;//计算canvas的宽度
@@ -230,7 +191,7 @@ Page({
                 ctx.stroke() //绘制已定义的路径
                 ctx.setFontSize(16);
                 ctx.fillStyle = "#ed5935";
-                ctx.fillText('识别小程序码,开启更多爆笑段子', 90, 550)
+                ctx.fillText('识别小程序码,开启更多节日祝福', 90, 550)
                 
                 ctx.drawImage(that.data.tempFilePath, 140, 585, 120, 120);
 
@@ -267,7 +228,7 @@ Page({
         if (!this.data.shareTempFilePath) {
             wx.showModal({
                 title: '提示',
-                content: '请先点击生成段子海报',
+                content: '请先点击生成海报',
                 showCancel: false
             })
         }

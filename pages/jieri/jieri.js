@@ -43,48 +43,37 @@ Page({
         expertListi: [],
         expertList: [],
         username: '',
+        nickName: '',
+        toname: '',
+        classid: '',
+        avatarUrl: '',
         expertListId: [],
         _windowWidth: wx.getSystemInfoSync().windowWidth,
         contentArray: []
     },
     getListData: function (classid, more) {
+        console.log('getListData---===--start');
         let that = this;
         let _arr = this.data.contentArray;
+        // console.log('__classid__', classid);
+        console.log('https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/wish/?getJson=texts&classid=' + classid);
         wx.request({
-            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=column&classid=' + classid,
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/wish/?getJson=texts&classid=' + classid,
             method: 'GET',
             dataType: 'json',
             success: (json) => {
                 console.log('json.data.result---', json);
                 if (more) {
-                    let _newArr = [];
-                    for (let index = 0; index < json.data.result.length; index++) {
-                        _newArr.push({
-                            classid: json.data.result[index].classid,
-                            id: json.data.result[index].id,
-                            smalltext: json.data.result[index].smalltext.replace(/<[^<>]+>/g, ''),
-                            title: json.data.result[index].title,
-                            username: json.data.result[index].username
-                        });
-                    };
-                    _arr = _arr.concat(_newArr);
+                    let __jsons = json.data.result;
+                    console.log('____jsons__', __jsons);
                     that.setData({
-                        contentArray: _arr
+                        contentArray: __jsons
                     });
                 } else {
-                    let _newArr = [];
-                    for (let index = 0; index < json.data.result.length; index++) {
-                        _newArr.push({
-                            classid: json.data.result[index].classid,
-                            id: json.data.result[index].id,
-                            smalltext: json.data.result[index].smalltext.replace(/<[^<>]+>/g, ''),
-                            title: json.data.result[index].title,
-                            username: json.data.result[index].username
-                        });
-                    };
-                    console.log('===', _newArr);
+                    let __jsons = json.data.result;
+                    console.log('____jsons__', __jsons);
                     that.setData({
-                        contentArray: _newArr
+                        contentArray: __jsons
                     });
                 };
                 console.log('contentArray--==', this.data.contentArray);
@@ -122,14 +111,20 @@ Page({
             });
     },
     onLoad: function (options) {
-        wx.showLoading({})
+        wx.showLoading({});
+        this.setData({
+            toname: wx.getStorageSync('storageToname'),
+            nickName: wx.getStorageSync('storageUserInfo').nickName,
+            avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl
+        });
+        console.log('__storageToname__', wx.getStorageSync('storageToname'));
         wx.setNavigationBarTitle({
             title: '节日祝福语'
-        })
+        });
         let _classid = [];
         let _expertListi = [];
         wx.request({
-            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/duanzi/?getJson=class',
+            url: 'https://www.yishuzi.com.cn/jianjie8_xiaochengxu_api/xiaochengxu/wish/?getJson=class&classid=258',
             method: 'GET',
             dataType: 'json',
             success: (json) => {

@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -50,6 +50,12 @@
 					"name": "内容页面",
 					"pathName": "pages/preview/preview",
 					"query": "&state=1&from_sentence=祝福万千总是情，福达五洲天地定，生生不息生日庆，日日平安蛋糕订。快刀切下喜与悲，乐事喜事一大堆，我祝福生日快乐，你开心快乐入睡。&from_toname=肥嘟嘟&from_avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erwtNpjvg3LEu024pHTcBZI4on7ZKdZ49icOQNWuvbbWGEibu1rWfDqlCKvz43dw8Ev5HibBaeCibEqAA/132&from_nickName=简洁"
+				},
+				{
+					"id": 2,
+					"name": "节日祝福语首页",
+					"pathName": "pages/jieri/jieri",
+					"query": ""
 				}
 			]
 		}

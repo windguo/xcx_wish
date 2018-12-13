@@ -4,6 +4,8 @@
     "pages/custom/custom",
     "pages/preview/preview",
     "pages/jieri/jieri",
+    "pages/jieri_list/jieri_list",
+    "pages/jieri_detail/jieri_detail",
     "pages/duanzi/duanzi",
     "pages/duanzi_detail/duanzi_detail",
     "pages/about/about"
@@ -29,16 +31,10 @@
         "text": "节日祝福语"
       },
       {
-        "pagePath": "pages/jieri/jieri",
+        "pagePath": "pages/duanzi/duanzi",
         "iconPath": "images/ico_duanzi.png",
         "selectedIconPath": "images/ico_duanzi_active.png",
         "text": "笑话段子"
-      },
-      {
-        "pagePath": "pages/about/about",
-        "iconPath": "images/ico_about.png",
-        "selectedIconPath": "images/ico_about_active.png",
-        "text": "关于我们"
       }
     ]
   },

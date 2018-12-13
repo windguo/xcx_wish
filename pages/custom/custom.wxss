@@ -1,5 +1,5 @@
 .container{
-  background-color: #f7f4ee;
+  background-color: #eee;
 }
 .inner{
   padding:20rpx 0;
@@ -106,7 +106,7 @@
 }
 
 .select-panel{
-  /*margin-top:30rpx;*/
+  margin-top:30rpx;
 }
 
 .select-panel .tips{
@@ -142,42 +142,6 @@
   margin-left:10rpx;
 }
 
-/*.select-panel scroll-view{
-  margin-top:8rpx;
-  background-color:#ffffff;
-  border-top:1px solid #e4dacf;
-  border-bottom:1px solid #e4dacf;
-}
-
-.select-panel scroll-view .item{
-  margin-top:0;
-  padding:30rpx 6rpx;
-  margin: 0 24rpx;
-  border-top:none;
-  background-color:transparent;
-}
-
-.select-panel scroll-view .item + .item{
-  border-top:1px solid #e4dacf;
-}
-.select-panel scroll-view .item .state{
-  width:40rpx;
-  margin-right:20rpx;
-}
-
-.select-panel scroll-view .item .state .circle{
-  width:30rpx;
-  height:30rpx;
-  border:2px solid #e7404d;
-  border-radius:100%;
-}
-
-
-.select-panel scroll-view .item .sentence{
-  flex:1;
-}*/
-
-
 .modal{
   position:absolute;
   width:100%;
@@ -208,7 +172,6 @@
 
 .modal .header button.on{
   color:#e7404d;
-  /*border-bottom:2rpx solid #e7404d;*/
 }
 
 .modal .header .highlight-line{
@@ -271,8 +234,6 @@
   width:20rpx;
   height:20rpx;
   background-color:#e7404d;
-  /*left:6rpx;
-  top:6rpx;*/
   top:0;
   left:0;
   right:0;

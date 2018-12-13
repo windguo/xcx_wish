@@ -10,13 +10,8 @@
             <scroll-view scroll-with-animation="true" scroll-y="true" class="scoll-h" bindscrolltolower="scrolltolowerLoadData">
                 <view class="layout_vertical">
                     <view wx:for="{{contentArray}}" class="listViews" wx:for-index="i" wx:for-item="item" data-text="{{item.txt}}">
-                        <navigator url="../jieri_detail/jieri_detail?state=2&from_sentence={{item.txt}}&from_toname={{toname}}&from_nickName={{nickName}}&from_avatarUrl={{avatarUrl}}"
-                            hover-class="navigator-hover">
+                        <navigator url="../custom/custom?state=2&from_sentence={{item.txt}}&from_toname={{toname}}&from_nickName={{nickName}}&from_avatarUrl={{avatarUrl}}" hover-class="navigator-hover">
                             <h3>{{item.txt}}</h3>
-                        </navigator>
-                        <navigator url="../custom/custom?state=2&from_sentence={{item.txt}}&classid={{classid}}"
-                            hover-class="navigator-hover">
-                            <p> → 使用此祝福语发送</p>
                         </navigator>
                     </view>
                 </view>

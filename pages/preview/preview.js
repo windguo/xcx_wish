@@ -17,7 +17,10 @@ Page({
   },
   onLoad: function (options) {
     wx.showLoading({});
-    console.log('__options__', options)
+    console.log('__options__', options);
+    wx.setNavigationBarTitle({
+      title: '预览祝福语'
+    });
     if (options.state == 1) {
       console.log('111111')
       this.setData({
@@ -26,8 +29,9 @@ Page({
         state: 1,
         avatarUrl: options.from_avatarUrl,
         nickName: options.from_nickName
-      })
-      return false
+      });
+      wx.hideLoading();
+      return false;
     }
     else if(options.state == 2){
       console.log('__state__',options.state);
@@ -38,9 +42,11 @@ Page({
         avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl,
         avatarUrl: options.from_avatarUrl,
         nickName: options.from_nickName
-      })
+      });
+      wx.hideLoading();
     }else {
-      console.log('2222')
+      console.log('2222');
+      wx.setStorageSync('storageToname', options.toname);
       this.setData({
         toname: options.toname,
         classid: options.classid,
@@ -76,12 +82,12 @@ Page({
     }
   },
   goHome: function () {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index?tonames='
     })
   },
   reply: function () {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index?tonames=' + this.data.nickName
     })
   },

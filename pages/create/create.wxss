@@ -1,5 +1,5 @@
 .container{
-  background-color: #f7f4ee;
+  background-color: #eee;
   color: #424242;
 }
 .inner{

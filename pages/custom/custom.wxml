@@ -23,12 +23,12 @@
       </view>
 
       <!-- select panel -->
-      <!-- <view class="select-panel">
+      <view class="select-panel">
         <button class="tips" plain="true" hover-class="tapped" bindtap="more-template">
           <text>选择其他推荐祝福语</text>
           <image class="bg" src="../../images/indicator.png"></image>
         </button>
-      </view> -->
+      </view>
 
       <!-- controls -->
       <view class="btns">

@@ -41,7 +41,7 @@ Page({
         wx.setNavigationBarTitle({
             title: '生日祝福语'
         })
-        console.log('---options---',options);
+        console.log('---index---options---',options);
         if (options.tonames && options.tonames !== ''){
             this.setData({
                 toname:options.tonames
