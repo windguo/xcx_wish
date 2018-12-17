@@ -75,73 +75,16 @@
   color: #e7404d;
 }
 .btns{
-  margin-top:40rpx;
-  display:flex;
+  margin:40rpx 50rpx;
   justify-content:center;
 }
 
-.btns button{
-  padding:0;
-  line-height:0;
-  width:230rpx;
-  line-height: 70rpx;
-  font-size:36rpx;
-  font-weight: bold;
-  color:#D9BA6A;
-  border:3rpx solid #D9BA6A;
-  border-radius: 10rpx;
-  margin-left:0;
-  margin-right:0;
-  background-color:transparent;
-}
-
-.btns button.hover-btn{
-  border:none;
-  background-color:#D9BA6A;
-  color:#ffffff;
-}
-
-.btns button + button{
-  margin-left:30rpx;
-}
-
 .select-panel{
-  margin-top:30rpx;
+  margin:60rpx 10rpx 50rpx 40rpx;
 }
-
-.select-panel .tips{
-  font-size:32rpx;
-  color:#e7404d;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width:330rpx;
-  padding:0;
-  border:none;
+.select-panel button {
+  margin: 0px 20rpx;
 }
-.select-panel .tips[plain]:not([disabled]):active {
-  color:#e7404d;
-}
-.tapped{
-  opacity:0.7
-}
-.btns .save-btn{
-  width: 630rpx;
-  height: 94rpx;
-  background-color: #d9ba6a;
-  color: #fff;
-  line-height: 94rpx;
-}
-.btns .save-btn::after{
-  display: none;
-}
-
-.select-panel .tips .bg{
-  width:15rpx;
-  height:27rpx;
-  margin-left:10rpx;
-}
-
 .modal{
   position:absolute;
   width:100%;

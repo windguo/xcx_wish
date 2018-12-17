@@ -7,7 +7,13 @@ Page({
         toname:'',
         nickName: wx.getStorageSync('storageUserInfo').nickName,
         userinfos: wx.getStorageSync('storageUserInfo').nickName ? true : false,
-        radios:254
+        radios:254,
+        hidden:false
+    },
+    gitHidden:function(){
+        this.setData({
+            hidden: true
+        })
     },
     onLoad:function (options) {
         wx.showLoading({});
@@ -92,7 +98,7 @@ Page({
         console.log('_data_',data);
         if (data.toname == '') {
             wx.showModal({
-                content: '请输入祝福接收人的姓名',
+                content: '请输入生日祝福接收人的姓名',
                 showCancel: false
             })
             return false;

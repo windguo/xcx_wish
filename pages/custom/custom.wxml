@@ -7,13 +7,13 @@
       <!-- to name -->
       <view class="item">
         <text class="key">对方称呼</text>
-        <input name="toname" class="value" value="{{toname}}" bindblur="setToName"></input>
+        <input name="toname" focus='true' placeholder="请输入对方姓名" class="value" value="{{toname}}" bindblur="setToName"></input>
       </view>
 
       <!-- from name -->
       <view class="item">
         <text class="key">祝福落款</text>
-        <input name="nickName" class="value" value="{{nickName}}" bindblur="setNickName"></input>
+        <input name="nickName" placeholder="请输入您的姓名" class="value" value="{{nickName}}" bindblur="setNickName"></input>
       </view>
 
       <!-- best wishes -->
@@ -24,16 +24,13 @@
 
       <!-- select panel -->
       <view class="select-panel">
-        <button class="tips" plain="true" hover-class="tapped" bindtap="more-template">
-          <text>选择其他推荐祝福语</text>
-          <image class="bg" src="../../images/indicator.png"></image>
-        </button>
+        <button size="mini" bindtap="more-template">选其他节日祝福</button>
+        <button size="mini" bindtap="more-template-richang">选其他日常祝福</button>
       </view>
 
       <!-- controls -->
       <view class="btns">
-        <!--<button class="cancel-btn" hover-class="hover-btn" bindtap="cancel">取消</button>-->
-        <button form-type="submit" class="save-btn" hover-class="hover-btn">保存</button>
+        <button form-type="submit" class="save-btn" type="warn" hover-class="hover-btn">保存并预览</button>
       </view>
 
     </form>

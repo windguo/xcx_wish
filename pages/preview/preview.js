@@ -17,31 +17,37 @@ Page({
   },
   onLoad: function (options) {
     wx.showLoading({});
-    console.log('__options__', options);
+    console.log('__preview__options__', options);
     wx.setNavigationBarTitle({
       title: '预览祝福语'
     });
+    // this.setData({
+    //   nickName: wx.getStorageSync('storageUserInfo').nickName,
+    //   avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl
+    // });
+    // console.log('__nickname__',this.data.nickName);
+    // console.log('__avatarUrl__', this.data.avatarUrl);
     if (options.state == 1) {
       console.log('111111')
       this.setData({
         one: options.from_sentence,
         toname: options.from_toname,
         state: 1,
-        avatarUrl: options.from_avatarUrl,
-        nickName: options.from_nickName
+        avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl,
+        nickName: wx.getStorageSync('storageUserInfo').nickName
       });
       wx.hideLoading();
       return false;
     }
     else if(options.state == 2){
-      console.log('__state__',options.state);
+      console.log('__options.state = 2__', options.state);
       this.setData({
         one: options.from_sentence,
         toname: options.from_toname,
         state:2,
         avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl,
-        avatarUrl: options.from_avatarUrl,
-        nickName: options.from_nickName
+        // avatarUrl: options.from_avatarUrl,
+        nickName: wx.getStorageSync('storageUserInfo').nickName
       });
       wx.hideLoading();
     }else {

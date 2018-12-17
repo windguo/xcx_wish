@@ -1,0 +1,33 @@
+<import src="../../wxParse/wxParse.wxml" />
+<!--<image src="{{qrodeImg}}" style="width:400rpx;height:400rpx;" mode="aspectFit"></image>-->
+<view class="container">
+  <view class="show_content">
+    <view class="cont">
+      <view class="contes">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    
+      <view class="linkTo">
+        <view bindtap="returnHome" class="linka">返回首页</view>
+<navigator url="../custom/custom?state=2&from_sentence={{smalltext}}&from_toname={{toname}}&from_nickName={{nickName}}&from_avatarUrl={{avatarUrl}}"
+  hover-class="navigator-hover">
+          <p style="color:#c30"> → 发送此祝福语</p>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view style="height:0rpx;overflow:hidden;text-indent:-99999rpx;position:absolute;top:-99999rpx;left:-99999rpx;">
+    <canvas canvas-id="shareCanvas" class="canvas" />
+  </view>
+  <view class="guess">
+    <h2>猜你喜欢</h2>
+    <view class="layout_vertical">
+      <view wx:for="{{contentArray}}" class="listViews" wx:for-index="i" wx:for-item="item" data-text="{{item.title}}">
+<navigator url="../custom/custom?state=2&from_sentence={{item.txt}}&from_toname={{toname}}&from_avatarUrl={{avatarUrl}}&from_nickName={{nickName}}"
+  hover-class="navigator-hover">
+          <h3>{{item.txt}}</h3>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

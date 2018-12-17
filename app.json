@@ -5,7 +5,10 @@
     "pages/preview/preview",
     "pages/jieri/jieri",
     "pages/jieri_list/jieri_list",
+    "pages/richang_list/richang_list",
     "pages/jieri_detail/jieri_detail",
+    "pages/richang/richang",
+    "pages/richang_detail/richang_detail",
     "pages/duanzi/duanzi",
     "pages/duanzi_detail/duanzi_detail",
     "pages/about/about"
@@ -22,13 +25,17 @@
         "pagePath": "pages/index/index",
         "iconPath": "images/ico_cake.png",
         "selectedIconPath": "images/ico_cake_active.png",
-        "text": "生日祝福语"
-      },
-      {
+        "text": "生日祝福"
+      }, {
         "pagePath": "pages/jieri/jieri",
         "iconPath": "images/ico_jieri.png",
         "selectedIconPath": "images/ico_jieri_active.png",
-        "text": "节日祝福语"
+        "text": "节日祝福"
+      }, {
+        "pagePath": "pages/richang/richang",
+        "iconPath": "images/ico_richang.png",
+        "selectedIconPath": "images/ico_richang_active.png",
+        "text": "日常祝福"
       },
       {
         "pagePath": "pages/duanzi/duanzi",
