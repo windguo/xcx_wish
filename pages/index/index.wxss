@@ -55,3 +55,22 @@
 }
 .addGif{position: fixed;top:0;right:15rpx;width:200px;height:80px;}
 .shengri_logo{width:250px;height:128px;}
+
+.covers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.addGif {
+    position: fixed;
+    top: 0;
+    right: 50rpx;
+    width: 300px;
+    height: 390px;
+    z-index: 9999;
+}
