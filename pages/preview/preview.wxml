@@ -8,7 +8,7 @@
           <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
         </view>
         <view class="to-name">
-          <text>祝 {{toname}} :</text>
+          祝 {{toname}} :
         </view>
         <view class="best-wishes">
           <text>{{one}}</text>
