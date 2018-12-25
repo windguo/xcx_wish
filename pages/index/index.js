@@ -24,7 +24,7 @@ Page({
       if (_scene.indexOf('start_') == 0) {
         let __scene = _scene.substring(6)
         console.log('__scene', __scene)
-        wx.navigateTo({
+        wx.switchTab({
           url: '../' + __scene + '/' + __scene
         })
       } else if (_scene.indexOf('classid-') == 0) {
