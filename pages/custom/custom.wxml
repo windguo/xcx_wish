@@ -7,13 +7,13 @@
       <!-- to name -->
       <view class="item">
         <text class="key">对方称呼</text>
-        <input name="toname" focus='true' placeholder="请输入对方姓名" class="value" value="{{toname}}" bindblur="setToName"></input>
+        <input name="toname" focus='true' placeholder="请输入对方姓名" class="value" value="{{toname}}" bindblur="setToName" />
       </view>
 
       <!-- from name -->
       <view class="item">
         <text class="key">祝福落款</text>
-        <input name="nickName" placeholder="请输入您的姓名" class="value" value="{{nickName}}" bindblur="setNickName"></input>
+        <input name="nickName" placeholder="请输入您的姓名" class="value" value="{{nickName}}" bindblur="setNickName" />
       </view>
 
       <!-- best wishes -->

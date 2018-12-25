@@ -2,42 +2,39 @@
   <view class="inner">
     <!-- wishes panel -->
     <view class="wishes-panel">
-      <image class="bg" src="../../images/wishes-panel.png"></image>
-      <!-- custom card -->
-      <!-- <block wx:if="{{state === '0'}}"> -->
-        <view bindtap="bindViewTap">
-          <view class="userinfo">
-            <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
-          </view>
-          <view class="to-name">
-            <text>祝 {{toname}} :</text>
-          </view>
-          <view class="best-wishes">
-            <text>{{one}}</text>
-          </view>
-          <view class="from-name">
-            <text>{{nickName}}</text>
-            <text>{{fromname}}</text>
-          </view>
-          <view class="date">
-            <text>{{today}}</text>
-          </view>
+      <image class="bg" src="../../images/yuandan_bg.png"></image>
+      <view bindtap="bindViewTap">
+        <view class="userinfo">
+          <image class="userinfo-avatar" src="{{avatarUrl}}" background-size="cover"></image>
         </view>
-    </view>
-
-    <view class="btns">
-      <block wx:if="{{state === 0}}">
-        <button class="change-btn" size='default' bindtap="changeOne">换一个祝福语</button>
-        <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
-      </block>
-      <block wx:if="{{state === 1}}">
-        <button class="change-btn" size='default' bindtap="reply">回复祝福</button>
-        <button class="finish-btn" size='default' bindtap="goHome">我也制作祝福</button>
-      </block>
-      <block wx:if="{{state === 2}}">
-        <button class="change-btn" size='default' bindtap="bindViewTap">继续编辑</button>
-        <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
-      </block>
+        <view class="to-name">
+          <text>祝 {{toname}} :</text>
+        </view>
+        <view class="best-wishes">
+          <text>{{one}}</text>
+        </view>
+        <view class="from-name">
+          <text>{{nickName}}</text>
+          <text>{{fromname}}</text>
+        </view>
+        <view class="date">
+          <text>{{today}}</text>
+        </view>
+      </view>
+      <view class="btns">
+        <block wx:if="{{state === 0}}">
+          <button class="change-btn" size='default' bindtap="changeOne">换一个祝福语</button>
+          <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
+        </block>
+        <block wx:if="{{state === 1}}">
+          <button class="change-btn" size='default' bindtap="reply">回复祝福</button>
+          <button class="finish-btn" size='default' bindtap="goHome">我也制作祝福</button>
+        </block>
+        <block wx:if="{{state === 2}}">
+          <button class="change-btn" size='default' bindtap="bindViewTap">继续编辑</button>
+          <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
+        </block>
+      </view>
     </view>
 
   </view>

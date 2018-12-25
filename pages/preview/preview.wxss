@@ -12,11 +12,10 @@
 }
 .wishes-panel{
   position: relative;
-  width: 460rpx;
-  height: 900rpx;
-  padding: 110rpx 113rpx 0;
-  font-size: 34rpx;
-  color: #424242;
+  height: 1500rpx;
+  /* padding: 110rpx 113rpx 0; */
+  font-size: 36rpx;
+  color: #fff;
 }
 .wishes-panel .bg{
   position: absolute;
@@ -30,6 +29,7 @@
   display: flex;
   justify-content: center;
   height: 180rpx;
+  margin-top:80rpx;
 }
 .userinfo-avatar {
   width: 180rpx;
@@ -38,26 +38,26 @@
 }
 .to-name{
   position: relative;
-  margin-top: 60rpx;
-  width:100%;
+  margin-left: 100rpx;
+  margin-top:50rpx;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow:hidden;
+  font-size: 36rpx;font-weight: bold
 }
 .best-wishes{
   position: relative;
-  width:100%;
-  margin-top: 30rpx;
+  margin: 30rpx 120rpx;
   text-align: justify;
   height: 310rpx;
   overflow:hidden;
+  font-size: 36rpx;
   line-height: 45rpx;
 }
 .from-name{
   position: relative;
-  margin-top: 60rpx;
+  margin-right: 100rpx;
   text-align: right;
-  width:100%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow:hidden;
@@ -65,11 +65,14 @@
 .date{
   position: relative;
   font-size: 28rpx;
+  margin-right: 100rpx;
   text-align: right;
 }
 
 .btns{
-  align-items: center;
+  margin-top:100rpx;
+  display: flex;
+  justify-content:space-around;
 }
 .btns button{
   display: inline-block;

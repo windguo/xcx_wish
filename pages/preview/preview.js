@@ -16,17 +16,17 @@ Page({
     avatarUrl: ''
   },
   onLoad: function (options) {
-    wx.showLoading({});
-    console.log('__preview__options__', options);
+    wx.showLoading({})
+    console.log('__preview__options__', options)
     wx.setNavigationBarTitle({
       title: '预览祝福语'
-    });
+    })
     // this.setData({
     //   nickName: wx.getStorageSync('storageUserInfo').nickName,
     //   avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl
-    // });
-    // console.log('__nickname__',this.data.nickName);
-    // console.log('__avatarUrl__', this.data.avatarUrl);
+    // })
+    // console.log('__nickname__',this.data.nickName)
+    // console.log('__avatarUrl__', this.data.avatarUrl)
     if (options.state == 1) {
       console.log('111111')
       this.setData({
@@ -35,24 +35,24 @@ Page({
         state: 1,
         avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl,
         nickName: wx.getStorageSync('storageUserInfo').nickName
-      });
-      wx.hideLoading();
-      return false;
+      })
+      wx.hideLoading()
+      return false
     }
-    else if(options.state == 2){
-      console.log('__options.state = 2__', options.state);
+    else if (options.state == 2) {
+      console.log('__options.state = 2__', options.state)
       this.setData({
         one: options.from_sentence,
         toname: options.from_toname,
-        state:2,
+        state: 2,
         avatarUrl: wx.getStorageSync('storageUserInfo').avatarUrl,
         // avatarUrl: options.from_avatarUrl,
         nickName: wx.getStorageSync('storageUserInfo').nickName
-      });
-      wx.hideLoading();
+      })
+      wx.hideLoading()
     }else {
-      console.log('2222');
-      wx.setStorageSync('storageToname', options.toname);
+      console.log('2222')
+      wx.setStorageSync('storageToname', options.toname)
       this.setData({
         toname: options.toname,
         classid: options.classid,
@@ -71,17 +71,17 @@ Page({
           that.setData({
             newstextArr: __jsons,
             one: _one.txt
-          });
-          wx.hideLoading();
+          })
+          wx.hideLoading()
         }
       })
     }
   },
   bindViewTap() {
-    console.log('__bindViewTap__');
-    console.log('__this.data.state__', this.data.state);
+    console.log('__bindViewTap__')
+    console.log('__this.data.state__', this.data.state)
     if (this.data.state === 0 || this.data.state === 2) {
-      console.log('__bindViewTap__1111');
+      console.log('__bindViewTap__1111')
       wx.navigateTo({
         url: '/pages/custom/custom?&from_sentence=' + this.data.one + '&from_toname=' + this.data.toname + '&from_avatarUrl=' + this.data.avatarUrl + '&from_nickName=' + this.data.nickName
       })
@@ -118,9 +118,9 @@ Page({
     })
   },
   onShareAppMessage() {
-    console.log('/pages/preview/preview?&state=1&from_sentence=' + this.data.one + '&from_toname=' + this.data.toname + '&from_avatarUrl=' + this.data.avatarUrl + '&from_nickName=' + this.data.nickName)
     return {
-      title: '您的微信好友【' + this.data.nickName + '】给您发来祝福',
+      title: '您好友【' + this.data.nickName + '】发来神秘消息,点击查看详情...',
+      imageUrl: '../../images/shenmi_share.png',
       desc: '你也可以制作祝福话送给TA哟！',
       path: '/pages/preview/preview?&state=1&from_sentence=' + this.data.one + '&from_toname=' + this.data.toname + '&from_avatarUrl=' + this.data.avatarUrl + '&from_nickName=' + this.data.nickName
     }
