@@ -1,7 +1,6 @@
 .container{
   position: relative;
-  background: #e7404d;
-  background: linear-gradient(to bottom, #e7404d 70%, #cc3944);
+  background: #ff202c;
 }
 .inner{
   height: 100%;

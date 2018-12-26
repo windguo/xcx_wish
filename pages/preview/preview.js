@@ -118,8 +118,9 @@ Page({
     })
   },
   onShareAppMessage() {
+    let name = (this.data.nickName == undefined) ? '' : '【' + this.data.nickName + '】';
     return {
-      title: '您好友【' + this.data.nickName + '】发来神秘消息,点击查看详情...',
+      title: '您好友' + name + '发来神秘消息,点击查看详情...',
       imageUrl: '../../images/shenmi_share.png',
       desc: '你也可以制作祝福话送给TA哟！',
       path: '/pages/preview/preview?&state=1&from_sentence=' + this.data.one + '&from_toname=' + this.data.toname + '&from_avatarUrl=' + this.data.avatarUrl + '&from_nickName=' + this.data.nickName

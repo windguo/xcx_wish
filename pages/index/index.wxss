@@ -1,5 +1,5 @@
 .container {
-    background-color: #e7404d;
+    background-color: #ff202c;
     color: #333;
 }
 .nameInput {
@@ -35,8 +35,8 @@
     font-size: 36rpx;
     text-align: center;
     display: block;
-    background-color: #e7404d;
-    /* background-image: -webkit-linear-gradient(top, #e7404d, #ed5935); */
+    background-color: #ff202c;
+    /* background-image: -webkit-linear-gradient(top, #ff202c, #ed5935); */
     /* height: 800rpx; */
 }
 .userinfoArea .logined{height:100rpx;}
