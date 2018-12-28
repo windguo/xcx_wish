@@ -37,13 +37,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
-					"name": "内容页面",
-					"pathName": "pages/preview/preview",
-					"query": "state=1&from_sentence=&from_toname=简洁&from_avatarUrl=https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83erwtNpjvg3LEu024pHTcBZI4on7ZKdZ49icOQNWuvbbWGEibu1rWfDqlCKvz43dw8Ev5HibBaeCibEqAA/132"
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
 				},
 				{
 					"id": -1,

@@ -1,0 +1,22 @@
+<view class="container">
+    <view bindtap="gifHidden" class="covers" hidden="{{hidden}}">
+        <image class="addGif" src='../../images/add.png' background-size="cover"></image>
+    </view>
+    <view class="userinfoArea">
+        <view class="logined" wx:if='{{userinfos}}'>
+            授权过了
+        </view>
+        <view class="loginBefore" wx:else>
+            <view class='header'>
+                <image class="img" src='../../images/logo.png' background-size="cover"></image>
+            </view>
+            <view class='content'>
+                <view>申请获取以下权限</view>
+                <text>获得你的公开信息(昵称，头像等)</text>
+            </view>
+            <button open-type="getUserInfo" type="primary" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+                微信授权
+            </button>
+        </view>
+    </view>
+</view>
