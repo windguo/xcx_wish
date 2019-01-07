@@ -255,7 +255,20 @@ Page({
                   content: '保存成功',
                   showCancel: false
                 })
-              }
+              };
+              wx.showModal({
+                content: '是否返回首页',
+                showCancel: true,
+                confirmColor: '#ff5a00',
+                success: function (res) {
+                  console.log(res)
+                  if (res.confirm) {
+                    wx.switchTab({
+                      url: '../index/index'
+                    })
+                  }
+                }
+              })
             },
             fail: (err) => {
               console.log(err)
