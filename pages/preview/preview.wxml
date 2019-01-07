@@ -32,6 +32,7 @@
         </block>
         <block wx:if="{{state === 2}}">
           <button class="change-btn" size='default' bindtap="bindViewTap">继续编辑</button>
+          <button class="creat-btn" bindtap="creat" site="default" type="primary">生成海报</button>
           <button class="finish-btn" open-type="share" size='default' bindtap="shareTips">立即送祝福</button>
         </block>
       </view>
@@ -55,3 +56,7 @@
 <div class="overlay" wx:if="{{showOverlay}}" bindtap="hideOverlay">
   <image class="tips" src="../../images/share-tips.png"></image>
 </div>
+
+<view style="height:0rpx;overflow:hidden;text-indent:-99999rpx;position:absolute;top:-99999rpx;left:-99999rpx;">
+  <canvas canvas-id="shareCanvas" class="canvas" />
+</view>

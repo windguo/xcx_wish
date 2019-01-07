@@ -3,7 +3,7 @@
 		"pages/index/index",
 		"pages/custom/custom",
 		"pages/preview/preview",
-		"pages/jieri/jieri",
+		"pages/shengri/shengri",
 		"pages/jieri_list/jieri_list",
 		"pages/richang_list/richang_list",
 		"pages/jieri_detail/jieri_detail",
@@ -22,24 +22,26 @@
 		"backgroundColor": "#e7404d"
 	},
 	"tabBar": {
+		"color": "#8a8a8a",
+		"selectedColor": "#ff202c",
 		"list": [
 			{
 				"pagePath": "pages/index/index",
-				"iconPath": "images/ico_cake.png",
-				"selectedIconPath": "images/ico_cake_active.png",
-				"text": "生日祝福"
-			},
-			{
-				"pagePath": "pages/jieri/jieri",
 				"iconPath": "images/ico_jieri.png",
 				"selectedIconPath": "images/ico_jieri_active.png",
-				"text": "节日祝福"
+				"text": "节日祝福语"
 			},
 			{
 				"pagePath": "pages/richang/richang",
 				"iconPath": "images/ico_richang.png",
 				"selectedIconPath": "images/ico_richang_active.png",
 				"text": "日常祝福"
+			},
+			{
+				"pagePath": "pages/shengri/shengri",
+				"iconPath": "images/ico_cake.png",
+				"selectedIconPath": "images/ico_cake_active.png",
+				"text": "生日祝福"
 			},
 			{
 				"pagePath": "pages/duanzi/duanzi",

@@ -8,7 +8,7 @@ Page({
 		nickName: wx.getStorageSync('storageUserInfo').nickName,
 		userinfos: wx.getStorageSync('storageUserInfo').nickName ? true : false,
 		radios: 254,
-		hidden: false
+		hidden: true
 	},
 	gifHidden: function () {
 		this.setData({
@@ -22,33 +22,6 @@ Page({
 				url: '../index/index'
 			});
 		}
-		// 扫码进入的判断开始
-		const _scene = options.scene
-		console.log('_scene_scene', _scene)
-		if (Boolean(_scene) == true) {
-			if (_scene.indexOf('start_') == 0) {
-				let __scene = _scene.substring(6)
-				console.log('__scene', __scene)
-				wx.switchTab({
-					url: '../' + __scene + '/' + __scene
-				})
-			} else if (_scene.indexOf('classid-') == 0) {
-				let _ar = _scene.split('_')
-				let _classid = _ar[0].split('-')
-				let _id = _ar[1].split('-')
-				let _channel = _id[0]
-				switch (_channel) {
-					case 'duanziid':
-						wx.navigateTo({
-							url: '../duanzi_detail/duanzi_detail?classid=' + _classid[1] + '&id=' + _id[1]
-						})
-						break
-					default:
-						break
-				}
-			}
-		}
-		// 扫码进入的判断结束
 		wx.setNavigationBarTitle({
 			title: '生日祝福语'
 		})

@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="userinfoArea">
+        <view class="logined" wx:if='{{userinfos}}'>
+            <view>
+                <image src="../../images/shengri_logo.png" class="shengri_logo" background-size='cover' ></image>
+            </view>
+            <view class="form">
+                <form bindsubmit="generate">
+<input class="nameInput" name="toname" value="{{toname}}" placeholder="怎么称呼TA?(不超过10个字)" />
+                    <radio-group class="radio-group" bindchange="radioChange">
+                        <input type="text" name="classid" hidden="false" value="{{radios}}" />
+                        <label class="radio" wx:for="{{items}}">
+                            <radio value="{{item.classid}}" checked="{{item.classid == 254}}" />{{item.classname}}
+                        </label>
+                    </radio-group>
+                    <view class="btn">
+                        <button form-type="submit" type="default" hover-class="navigator-hover" class="submit-btn">继续选择生日祝福语</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>

@@ -75,7 +75,7 @@
 }
 .btns button{
   display: inline-block;
-  margin:0px 20rpx;
+  margin:0px 10rpx;
   font-size: 16px;
 }
 .btns .button-hover{
@@ -155,7 +155,13 @@
 }
 
 .btns .finish-btn,
+.btns .creat-btn,
 .btns .share-btn,
 .btns .custom-btn {
+  color: #333;
   background-color: #e8c478;
+}
+.canvas{
+  width: 400px;
+  height:600px;
 }
