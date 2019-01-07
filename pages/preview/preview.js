@@ -220,7 +220,7 @@ Page({
               wx.hideLoading()
               // 预览图片
               that.previewImages(res.tempFilePath)
-            // that.saveImageToPhotosAlbum()
+            that.saveImageToPhotosAlbum()
             }
           })
         }, 100))
